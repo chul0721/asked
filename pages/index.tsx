@@ -14,7 +14,8 @@ const Index: NextPage = () => {
     await fetch('https://us-central1-asked-chul0721.cloudfunctions.net/asked/regist', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({ content: question })
     })

@@ -11,7 +11,7 @@ const Index: NextPage = () => {
   const sendData = async () => {
     if (question.length < 1) return alert('내용을 써')
 
-    await fetch('https://us-central1-asked-chul0721.cloudfunctions.net/asked/regist', {
+    await fetch('/api/regist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const Index: NextPage = () => {
   }
 
   const fetchData = async () => {
-    const res = await fetch('https://us-central1-asked-chul0721.cloudfunctions.net/asked/data')
+    const res = await fetch('/api/data')
     const json = await res.json()
 
     setData(json.data.reverse())

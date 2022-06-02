@@ -12,6 +12,11 @@ class PortfolioDocument extends Document {
       <Html className="scroll-smooth">
         <Head>
           <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5036006381362212"
+            crossOrigin="anonymous"
+          />
         </Head>
         <Main />
         <NextScript />

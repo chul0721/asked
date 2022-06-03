@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const Index: NextPage = () => {
   const router = useRouter()
@@ -38,9 +39,11 @@ const Index: NextPage = () => {
     <>
       <div className="flex flex-col">
         <div className="grid justify-items-center pt-8 pb-4">
-          <div className="text-3xl font-semibold">병철이한테 무엇이든 물어보세요!</div>
+          <div className="text-3xl font-semibold">병철이의 짝퉁 에스크</div>
           <div className="grid text-sm font-mono justify-items-center -space-y-1">
-            <span>made with ❤️ in Korea</span>
+            <Link href="https://github.com/chul0721/asked">
+              <a target="_blank">made with ❤️ in Korea</a>
+            </Link>
           </div>
         </div>
         <div className="grid justify-center space-y-3 mb-4">
@@ -79,7 +82,10 @@ const Index: NextPage = () => {
             <div>
               {Object.entries(data).map(([_, question]: any) =>
                 question.isAnswered ? (
-                  <div key={question.id} className="bg-blue-50 rounded-xl p-5 my-10 w-[32rem]">
+                  <div
+                    key={question.id}
+                    className="bg-blue-50 rounded-xl p-5 my-10 w-[22rem] md:w-[32rem]"
+                  >
                     <div className="text-xl font-semibold">Q. {question.content}</div>
                     <div className="text-lg pt-1">&gt; {question.answer}</div>
                     <div className="font-mono text-sm text-slate-400 pt-3">
@@ -114,7 +120,10 @@ const Index: NextPage = () => {
                 question.isAnswered ? (
                   <></>
                 ) : (
-                  <div key={question.id} className="bg-blue-50 rounded-xl p-5 my-10 w-[32rem]">
+                  <div
+                    key={question.id}
+                    className="bg-blue-50 rounded-xl p-5 my-10 w-[22rem] md:w-[32rem]"
+                  >
                     <div className="text-xl font-semibold">Q. {question.content}</div>
                     <div className="font-mono text-sm text-slate-400 pt-3">
                       {question.answeredAt.slice(0, 10)}

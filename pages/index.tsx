@@ -64,7 +64,7 @@ const Index: NextPage = () => {
       </div>
       <div className="grid justify-center pt-20">
         {screen === 1 && (
-          <>
+          <div className="grid justify-items-center">
             <div className="flex">
               <div
                 onClick={() => setScreen(1)}
@@ -97,10 +97,10 @@ const Index: NextPage = () => {
                 )
               )}
             </div>
-          </>
+          </div>
         )}
         {screen === 2 && (
-          <>
+          <div className="grid justify-items-center">
             <div className="flex">
               <div
                 onClick={() => setScreen(1)}
@@ -132,7 +132,7 @@ const Index: NextPage = () => {
                 )
               )}
             </div>
-          </>
+          </div>
         )}
       </div>
     </>

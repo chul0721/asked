@@ -80,21 +80,20 @@ const Index: NextPage = () => {
               </div>
             </div>
             <div>
-              {Object.entries(data).map(([_, question]: any) =>
-                question.answer ? (
-                  <div
-                    key={question.id}
-                    className="bg-blue-50 rounded-xl p-5 my-10 w-[22rem] md:w-[32rem]"
-                  >
-                    <div className="text-xl font-semibold">Q. {question.content}</div>
-                    <div className="text-lg pt-1">&gt; {question.answer}</div>
-                    <div className="font-mono text-sm text-slate-400 pt-3">
-                      {question.answeredAt.slice(0, 10)}
+              {Object.entries(data).map(
+                ([_, question]: any) =>
+                  question.answer && (
+                    <div
+                      key={question.id}
+                      className="bg-blue-50 rounded-xl p-5 my-10 w-[22rem] md:w-[32rem]"
+                    >
+                      <div className="text-xl font-semibold">Q. {question.content}</div>
+                      <div className="text-lg pt-1">&gt; {question.answer}</div>
+                      <div className="font-mono text-sm text-slate-400 pt-3">
+                        {question.answeredAt.slice(0, 10)}
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <></>
-                )
+                  )
               )}
             </div>
           </div>
@@ -116,20 +115,19 @@ const Index: NextPage = () => {
               </div>
             </div>
             <div>
-              {Object.entries(data).map(([_, question]: any) =>
-                question.answer ? (
-                  <></>
-                ) : (
-                  <div
-                    key={question.id}
-                    className="bg-blue-50 rounded-xl p-5 my-10 w-[22rem] md:w-[32rem]"
-                  >
-                    <div className="text-xl font-semibold">Q. {question.content}</div>
-                    <div className="font-mono text-sm text-slate-400 pt-3">
-                      {question.answeredAt.slice(0, 10)}
+              {Object.entries(data).map(
+                ([_, question]: any) =>
+                  !question.answer && (
+                    <div
+                      key={question.id}
+                      className="bg-blue-50 rounded-xl p-5 my-10 w-[22rem] md:w-[32rem]"
+                    >
+                      <div className="text-xl font-semibold">Q. {question.content}</div>
+                      <div className="font-mono text-sm text-slate-400 pt-3">
+                        {question.answeredAt.slice(0, 10)}
+                      </div>
                     </div>
-                  </div>
-                )
+                  )
               )}
             </div>
           </div>

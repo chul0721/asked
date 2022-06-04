@@ -81,7 +81,7 @@ const Index: NextPage = () => {
             </div>
             <div>
               {Object.entries(data).map(([_, question]: any) =>
-                question.isAnswered ? (
+                question.answer ? (
                   <div
                     key={question.id}
                     className="bg-blue-50 rounded-xl p-5 my-10 w-[22rem] md:w-[32rem]"
@@ -117,7 +117,7 @@ const Index: NextPage = () => {
             </div>
             <div>
               {Object.entries(data).map(([_, question]: any) =>
-                question.isAnswered ? (
+                question.answer ? (
                   <></>
                 ) : (
                   <div
